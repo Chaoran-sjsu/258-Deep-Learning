@@ -1,0 +1,33 @@
+Deep Reinforcement Learning based Self-driving car
+Software and Hardware
+Software
+Windows10 (64-bit)
+Python 3.6
+Anaconda 5.2.0
+Tensorflow 1.8.0 or Tensorflow 2.3
+Tensorboard 1.8.0
+Hardware
+CPU: Intel(R) Core(TM)i7-6700k CPU @ 4.00GHz
+GPU: NVIDIA GeForce GTX 2080 Ti 32GB
+Memory: 32 GB
+How to run this project
+Clone repository
+Tensorflow version option:
+Tensorflow 1.8.0: Run DQN_image.ipynb in algorithm folder
+Tensorflow 2.3.0: Run DQN_image_keras.ipynb in algorithm folder
+For training
+In "Set environment path" cell set os according to your system among Windows, Mac, Linux. train_mode = True
+In "Training or Inference" cell set saver=tf.train.Saver(max_to_keep=4, keep_checkpoint_every_n_hours=2), input 2 for training when prompted
+For testing
+Create tmp folder under algorithm folder to store pre-trained model files for using. Copy the model file trained from saved_networks to tmp
+In "Set environment path" cell set os according to your system among Windows, Mac, Linux. train_mode = False
+In "Set Parameters" cell set load_path = './tmp/model.ckpt'
+In "Training or Inference" cell set saver=tf.train.import_meta_graph('./tmp/model.ckpt.meta'), input 1 for inference when prompted
+PPT Link
+https://docs.google.com/presentation/d/1LvGOVM16kZpP2SgWsbJBcLV3PiVDzYY3lIYrdGGn03g/edit?usp=sharing
+
+Project Link
+https://github.com/ChitandaMayaka/CMPE258-TeamProject
+
+Reference
+https://github.com/MLJejuCamp2017/DRL_based_SelfDrivingCarControl
